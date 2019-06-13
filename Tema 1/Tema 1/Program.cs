@@ -6,17 +6,17 @@ namespace Tema_1
     {
         static void Main(string[] args)
         {
-            //Exercitiul1();
-            //Exercitiul2();
-            //Exercitiul3();
-            //Exercitiul4();
-            //Exercitiul5a();
-            //Exercitiul5b();
-              Exercitiul6();
+            Exercitiul1();
+            Exercitiul2();
+            Exercitiul3();
+            Exercitiul4();
+            Exercitiul5a();
+            Exercitiul5b();
+            Exercitiul6();
             Exercitiul7();
             Exercitiul8();
             Exercitiul9();
-            // Exercitiul10();
+            Exercitiul10();
             Exercitiul11();
             Exercitiul12();
             Exercitiul13();
@@ -35,7 +35,7 @@ namespace Tema_1
             int b = Int32.Parse(Console.ReadLine());
             Console.Write("Third number: ");
             int c = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Result is {0}", a + b + c);
+            Console.WriteLine("The sum of the three numbers is {0}", a + b + c);
         }
 
         public static void Exercitiul2()
@@ -53,10 +53,10 @@ namespace Tema_1
             int h = Int32.Parse(Console.ReadLine());
 
             if (d > e && d > f && d > g && d > h) Console.WriteLine("{0} is the biggest.", d);
-            else if (e > d && e > f && e > g && e > h) Console.WriteLine("{0} is the biggest.", e);
-            else if (f > d && f > e && f > g && f > h) Console.WriteLine("{0} is the biggest.", f);
-            else if (g > d && g > e && g > f && g > h) Console.WriteLine("{0} is the biggest.", g);
-            else if (h > d && h > e && h > f && h > g) Console.WriteLine("{0} is the biggest.", h);
+            else if (e > d && e > f && e > g && e > h) Console.WriteLine("Number {0} is the biggest.", e);
+            else if (f > d && f > e && f > g && f > h) Console.WriteLine("Number {0} is the biggest.", f);
+            else if (g > d && g > e && g > f && g > h) Console.WriteLine("Number {0} is the biggest.", g);
+            else if (h > d && h > e && h > f && h > g) Console.WriteLine("Number {0} is the biggest.", h);
             else Console.WriteLine("There isn't a biggest number.");
         }
 
@@ -83,7 +83,7 @@ namespace Tema_1
                 if (i % 5 == 0) counter++;
             }
 
-            Console.WriteLine("{0} numbers found.", counter);
+            Console.WriteLine("In this interval, they are {0} numbers founded.", counter);
         }
 
         public static void Exercitiul5a()
@@ -138,7 +138,7 @@ namespace Tema_1
                 int e = Int32.Parse(Console.ReadLine());
                 sum = sum + e;
 
-                Console.WriteLine("The sum is  : {0} ", a + b + c + d + e);
+                Console.WriteLine("The sum is of the five numbers is : {0} ", a + b + c + d + e);
             }
         }
 
@@ -190,7 +190,9 @@ namespace Tema_1
             Console.WriteLine("Lowest - {0}, Highest - {1}", lowest, highest);
         }
 
-        public static void Exercitiul10()
+      
+           
+            public static void Exercitiul10()
         {
             Console.WriteLine("10.  Write program that outputs a triangle made of stars with variable size, depending on an input parameter. Look at the examples to get an idea. The input comes as a string number, which needs to be parsed to a number. The output is a series of lines printed on the console, forming a triangle of variable size.");
 
@@ -199,17 +201,29 @@ namespace Tema_1
             // *
             // **
             // *
-            Console.WriteLine("Introduceti numarul de * = ");
-            int count = Int32.Parse(Console.ReadLine());
-            for (int i = 1; i < count; i++)
+            Console.WriteLine("Enter the number of stars = ");
+
+            int input = int.Parse(Console.ReadLine());
+            int a, b;
+
+            for (a = 1; a <= input; a++)
             {
-                Console.Write("* ");
+                for (b = 1; b <= a; b++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine("");
+            }
+            for (a = input - 1; a >= 0; a--)
+            {
+                for (b = 1; b <= a; b++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine("");
             }
 
-            for (int i = count - 1; i >= 0; i++)
-            {
-                Console.WriteLine("* ");
-            }
+            
         }
 
         public static void Exercitiul11()
@@ -269,24 +283,24 @@ namespace Tema_1
             //buzz
 
             for (var numbers = 1; numbers <= 50; numbers++)
-            {  //Lists numbers to 50
+            {  
 
-                //if number is divisible by 5 or 3 prints FizzBuzz
+
                 if (numbers % 15 == 0)
                 {
                     Console.WriteLine("FizzBuzz");
                 }
-                //if number is divisible by 5 prints Buzz
+
                 else if (numbers % 5 == 0)
                 {
                     Console.WriteLine("Buzz");
                 }
-                //if number is divisible by 3 prints Fizz
+
                 else if (numbers % 3 == 0)
                 {
                     Console.WriteLine("Fizz");
                 }
-                // if neither prints the number
+
                 else
                 {
                     Console.WriteLine(numbers);
